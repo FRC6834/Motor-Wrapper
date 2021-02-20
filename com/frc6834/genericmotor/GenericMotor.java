@@ -5,6 +5,8 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
+package com.frc6834.genericmotor;
+
 /**
 * <h1>GenericMotor</h1>
 * Wrapper for various Motor and Speed Controller devices
@@ -27,12 +29,12 @@ public class GenericMotor
     // 4 : Spark
     // 5 : TalonFX
     //
-    public int                              DEVICE_NULL             = -1;
-    public int                              DEVICE_TALONSRX         = 1;
-    public int                              DEVICE_VICTOR           = 2;
-    public int                              DEVICE_SPARKCAN         = 3;
-    public int                              DEVICE_SPARK            = 4;
-    public int                              DEVICE_TALONFX          = 5;
+    public static int                       DEVICE_NULL             = -1;
+    public static int                       DEVICE_TALONSRX         = 1;
+    public static int                       DEVICE_VICTOR           = 2;
+    public static int                       DEVICE_SPARKCAN         = 3;
+    public static int                       DEVICE_SPARK            = 4;
+    public static int                       DEVICE_TALONFX          = 5;
 
     //
     // Types of motor brushes, currently only in use with CANSparkMax
@@ -40,9 +42,9 @@ public class GenericMotor
     // 0 : Brushed
     // 1 : Brushless
     //
-    public int                              MOTOR_TYPE_NULL         = -1;
-    public int                              MOTOR_TYPE_BRUSHED      = 0;
-    public int                              MOTOR_TYPE_BRUSHLESS    = 1;
+    public static int                       MOTOR_TYPE_NULL         = -1;
+    public static int                       MOTOR_TYPE_BRUSHED      = 0;
+    public static int                       MOTOR_TYPE_BRUSHLESS    = 1;
 
     //
     // Objects and variables pertaining to the motor itself, can be ignored by end-user
@@ -57,6 +59,8 @@ public class GenericMotor
     private CANSparkMaxLowLevel.MotorType   motor_type;         // Motor type, currently only in use with CANSparkMax
     private int                             device_type;        // Type of device being used
     private boolean                         support_autonomous; // Does the device support autonomous use?
+
+    //rightTalon.SetTalonSRXField(TalonSRXFields.setSelectedSensorPosition, 1, 1, 1);
 
     /**
      * Method for initializing DifferentialDrive with GenericMotors
