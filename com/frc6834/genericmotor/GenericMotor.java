@@ -60,7 +60,97 @@ public class GenericMotor
     private int                             device_type;        // Type of device being used
     private boolean                         support_autonomous; // Does the device support autonomous use?
 
-    //rightTalon.SetTalonSRXField(TalonSRXFields.setSelectedSensorPosition, 1, 1, 1);
+    /**
+     * Sets a field for the specified TalonSRX GenericMotor. Use the 
+     * <a href="ctr-electronics.com/downloads/api/cpp/html/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_base_motor_controller.html">
+     * CTRE Docs</a>
+     * for a list of fields. If field does not utilize all parameters, anything
+     * can be specified.
+     * @param field The field you desire to set.
+     * @param parm0 Parameter One
+     * @param parm1 Parameter Two
+     * @param parm2 Parameter Three
+     * @return N/A
+     */
+    public void SetTalonSRXField(int field, int parm0, int parm1, int parm2)
+    {
+        switch(field) {
+            // setSelectedSensorPosition(double, int, int)
+            case TalonSRXFields.setSelectedSensorPosition:
+                this.talon_motor.setSelectedSensorPosition((double)parm0, parm1, parm2);
+                break;
+            // setNeutralMode(NeutralMode)
+                this.talon_motor.setNeutralMode((NeutralMode)parm0);
+                break;
+            default:
+                break;
+        }
+    }
+
+    
+    /**
+     * Retrieves a field for the specified TalonSRX GenericMotor. Use the 
+     * <a href="ctr-electronics.com/downloads/api/cpp/html/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_base_motor_controller.html">
+     * CTRE Docs</a>
+     * for a list of fields. If field does not utilize all parameters, anything
+     * can be specified.
+     * @param field The field you desire to get.
+     * @param parm0 Parameter One
+     * @param parm1 Parameter Two
+     * @param parm2 Parameter Three
+     * @return N/A
+     */
+    public double GetTalonSRXField(int field, int parm0, int parm1, int parm2)
+    {
+        switch(field) {
+            // GetDeviceID() -- returns int
+            case TalonSRXFields.GetDeviceID:
+                return (double)this.talon_motor.GetDeviceID();
+                break;
+            // GetInverted() -- returns bool
+            case TalonSRXFields.GetInverted:
+                return (double)this.talon_motor.GetInverted();
+                break;
+            // GetBusVoltage() -- returns double
+            case TalonSRXFields.GetBusVoltage:
+                return (double)this.talon_motor.GetBusVoltage();
+                break;
+            // GetMotorOutputPercent() -- returns double
+            case TalonSRXFields.GetMotorOutputPercent:
+                return (double)this.talon_motor.GetMotorOutputPercent();
+                break;
+            // GetMotorOutputVoltage() -- returns double
+            case TalonSRXFields.GetMotorOutputVoltage:
+                return (double)this.talon_motor.GetMotorOutputVoltage();
+                break;
+            // GetTemperature() -- returns double
+            case TalonSRXFields.GetTemperature:
+                return (double)this.talon_motor.GetTemperature();
+                break;
+            // GetSelectedSensorPosition(int) -- returns double
+            case TalonSRXFields.GetSelectedSensorPosition:
+                return (double)this.talon_motor.GetSelectedSensorPosition(parm0);
+                break;
+            // GetSelectedSensorVelocity(int) -- returns double
+            case TalonSRXFields.GetSelectedSensorVelocity:
+                return (double)this.talon_motor.GetSelectedSensorVelocity(parm0);
+                break;
+            // GetStatusFramePeriod(StatusFrame, int) -- returns int
+            case TalonSRXFields.GetStatusFramePeriod:
+                return (double)this.talon_motor.GetStatusFramePeriod((StatusFrame)parm0, parm1);
+                break;
+            // GetStatusFrameEnahncedPeriod(StatusFrameEnhanced, int) -- returns int
+            case TalonSRXFields.GetStatusFrameEnhancedPeriod:
+                return (double)this.talon_motor.GetStatusFrameEnhancedPeriod((StatusFrameEnhanced)parm0, parm1);
+                break;
+            // GetClosedLoopError(int) -- returns double
+            case TalonSRXFields.GetClosedLoopError:
+                return (double)this.talon_motor.GetClosedLoopError(parm0);
+                break;
+            default: 
+                break;
+        }
+    } 
 
     /**
      * Method for initializing DifferentialDrive with GenericMotors
