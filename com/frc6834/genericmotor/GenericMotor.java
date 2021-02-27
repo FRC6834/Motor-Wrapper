@@ -62,7 +62,7 @@ public class GenericMotor
 
     /**
      * Sets a field for the specified TalonSRX GenericMotor. Use the 
-     * <a href="ctr-electronics.com/downloads/api/cpp/html/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_base_motor_controller.html">
+     * <a href="https://ctr-electronics.com/downloads/api/cpp/html/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_base_motor_controller.html">
      * CTRE Docs</a>
      * for a list of fields. If field does not utilize all parameters, anything
      * can be specified.
@@ -90,7 +90,7 @@ public class GenericMotor
     
     /**
      * Retrieves a field for the specified TalonSRX GenericMotor. Use the 
-     * <a href="ctr-electronics.com/downloads/api/cpp/html/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_base_motor_controller.html">
+     * <a href="https://ctr-electronics.com/downloads/api/cpp/html/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_base_motor_controller.html">
      * CTRE Docs</a>
      * for a list of fields. If field does not utilize all parameters, anything
      * can be specified.
